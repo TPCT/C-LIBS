@@ -54,7 +54,7 @@ char** Split (const char *String, const char *Splitter, unsigned long long Count
             if (Match_Index){
                 char* Temp_Splitted_word = (char*) calloc(Splitted_Word_Index + Match_Index + 2, sizeof(char));
                 for(int i = 0; i < Splitted_Word_Index; *(Temp_Splitted_word + i) = *(Splitted_Word + i), i++);
-                for(int i = 0; i < Match_Index; *(Temp_Splitted_word + i) = *(Temp_Match_Word + i), i++, Splitted_Word_Index++);
+                for(int i = 0; i < Match_Index; *(Temp_Splitted_word + Splitted_Word_Index + i) = *(Temp_Match_Word + i), i++, Splitted_Word_Index++);
                 free(Splitted_Word);
                 Splitted_Word = Temp_Splitted_word;
                 Match_Index = 0;
